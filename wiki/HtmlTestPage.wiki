@@ -1,4 +1,4 @@
-#summary View the entire testsuite in one HTML Page
+#summary View the entire testsuite in one HTML Page [WARNING: May Crash or Hang your Browser]
 #labels Featured
 
 = Introduction =
