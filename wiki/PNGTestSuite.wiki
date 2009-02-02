@@ -27,7 +27,11 @@ testsuite using libpng-1.2.34.
   * Using the pngtest utility from the libpng distribution, of the 11982 total lines, 5969 are executed (~50%).
   * Note that the majority of the unexecuted code is from `pngw*.c` (i.e. writing routines).
 
-[http://chart.apis.google.com/chart?chs=500x250&chd=t:296,80,339,98,545,29,108,1811,549,494,10,31,440,30,1109&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Executed%20Lines%20by%20File&ft=.png] [http://chart.apis.google.com/chart?chs=500x250&chd=t:133,101,341,46,340,7,2846,269,242,75,347,24,435,364,443&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Unexecuted%20Lines%20by%20File&ft=.png]
+[http://chart.apis.google.com/chart?chs=500x250&chd=t:296,80,339,98,545,29,108,1811,549,494,10,31,440,30,1109&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Executed%20Lines%20by%20File&ft=.png]
+
+[http://chart.apis.google.com/chart?chs=500x250&chd=t:133,101,341,46,340,7,2846,269,242,75,347,24,435,364,443&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Unexecuted%20Lines%20by%20File&ft=.png]
+
+[http://chart.apis.google.com/chart?chds=0,3000&chs=500x250&cht=bvs&chco=4D89F9,C6D9FD&chd=t:304,81,340,99,551,29,104,1809,545,498,10,31,441,29,1131,0|133,115,341,47,337,8,2823,296,260,75,352,26,456,371,450,9&cht=bvs&chtt=Executed%20vs%20Unexecuted%20Lines%20Per%20File&ft=.png]
 
 === Coverage Gaps ==
 
@@ -2830,6 +2834,8 @@ ERROR: f85c09bb72db5a572d24b8d3a0d56542.png
 {{{
 fa9f6aa9bcc679d20e171dbf07a628fd.png  multiple gAMA not allowed
 ERROR: fa9f6aa9bcc679d20e171dbf07a628fd.png
+
+
 
 }}}
 === c-m1-fcac2d6a6a739e8ceb946ac99200d9f1.png ===
