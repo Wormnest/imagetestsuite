@@ -23,9 +23,9 @@ testsuite using libpng-1.2.34.
 
 == Coverage ==
 
-  * Of the 5955 unique code blocks in the pngr*.c (i.e. reading routines), 2493 (~42%) are currently exercised with this testsuite.
+  * Of the 5955 unique code blocks in the `pngr*.c` (i.e. reading routines), 2493 (~42%) are currently exercised with this testsuite.
   * Using the pngtest utility from the libpng distribution, of the 11982 total lines, 5969 are executed (~50%).
-  * Note that the majority of the unexecuted code is from pngw*.c (i.e. writing routines).
+  * Note that the majority of the unexecuted code is from `pngw*.c` (i.e. writing routines).
 
 [http://chart.apis.google.com/chart?chs=500x250&chd=t:296,80,339,98,545,29,108,1811,549,494,10,31,440,30,1109&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Executed%20Lines%20by%20File&ft=.png] [http://chart.apis.google.com/chart?chs=500x250&chd=t:133,101,341,46,340,7,2846,269,242,75,347,24,435,364,443&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Unexecuted%20Lines%20by%20File&ft=.png]
 
