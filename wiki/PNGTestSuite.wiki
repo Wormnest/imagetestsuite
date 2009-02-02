@@ -4,11 +4,11 @@
 
 The PNG testsuite is a collection of [http://en.wikipedia.org/wiki/Portable_Network_Graphics PNG images] from publicly available
 sources, intended to help verify the correct operation of PNG image
-decoders.
+decoders when presented with malformed or esoteric characteristics.
 
 It is not the intention of this testsuite to verify the correct rendering of
 images, but rather to ensure safe operation when presented with malformed
-data, esoteric characteristics, edge cases, and pathological input.
+data, esoteric characteristics, edge cases, and pathological input. If you're interested in verifying correct rendering, you should check out the official PNG testsuite, [http://www.schaik.com/pngsuite/ PngSuite].
 
 Your decoder or application should gracefully handle any errors while
 attempting to render these images. To read more about how these testsuites are
