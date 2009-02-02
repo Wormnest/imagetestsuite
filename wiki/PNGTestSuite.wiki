@@ -39,6 +39,8 @@ There are some notable omissions from the testsuite, I have no live example
 of a application generating an iTXt chunk. If you have an application that
 does so, please [http://code.google.com/p/imagetestsuite/issues/ submit some samples].
 
+The majority of the unexecuted code is from the writing routines, whice are largely unused during decoder testing. A large portion of the code also handles runtime allocation failure.
+
 = Testsuite Contents =
 == Legend ==
 
