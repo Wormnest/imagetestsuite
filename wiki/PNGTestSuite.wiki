@@ -25,9 +25,9 @@ testsuite using libpng-1.2.34.
 
   * Using the pngtest utility from the libpng distribution, of the 9139 total lines, 4295 are executed (~50%).
 
-[http://chart.apis.google.com/chart?chs=500x250&chd=t:287,81,330,99,559,28,104,1882,596,319,10,0&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|sysmacros.h&cht=p&chtt=Distribution%20of%20Executed%20Lines%20by%20File]
-[http://chart.apis.google.com/chart?chs=500x250&chd=t:150,115,345,47,337,7,2823,325,232,102,352,9&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|sysmacros.h&cht=p&chtt=Distribution%20of%20Unexecuted%20Lines%20by%20File]
-[http://chart.apis.google.com/chart?chds=0,3000&chs=500x250&cht=bvs&chco=4D89F9,C6D9FD&chd=t:287,81,330,99,559,28,104,1882,596,319,10,0|150,115,345,47,337,7,2823,325,232,102,352,9&cht=bvs&chtt=Executed%20vs%20Unexecuted%20Lines%20Per%20File]
+[http://chart.apis.google.com/chart?chs=500x250&chd=t:287,81,330,99,559,28,104,1882,596,319,10,0&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|sysmacros.h&cht=p&chtt=Distribution%20of%20Executed%20Lines%20by%20File&ft=.png]
+[http://chart.apis.google.com/chart?chs=500x250&chd=t:150,115,345,47,337,7,2823,325,232,102,352,9&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|sysmacros.h&cht=p&chtt=Distribution%20of%20Unexecuted%20Lines%20by%20File&ft=.png]
+[http://chart.apis.google.com/chart?chds=0,3000&chs=500x250&cht=bvs&chco=4D89F9,C6D9FD&chd=t:287,81,330,99,559,28,104,1882,596,319,10,0|150,115,345,47,337,7,2823,325,232,102,352,9&cht=bvs&chtt=Executed%20vs%20Unexecuted%20Lines%20Per%20File&ft=.png]
 
 === Coverage Gaps ==
 
