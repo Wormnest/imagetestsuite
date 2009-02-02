@@ -2,9 +2,7 @@
 
 = Introduction =
 
-$Id: $
-
-The PNG testsuite is a collection of PNG images from publicly available
+The PNG testsuite is a collection of [http://en.wikipedia.org/wiki/Portable_Network_Graphics PNG images] from publicly available
 sources, intended to help verify the correct operation of PNG image
 decoders.
 
@@ -18,12 +16,7 @@ generated and their intended use, see AboutTestsuite.
 
 = Specification =
 
-These images were selected based on the number of execution paths explored
-with libpng-1.2.34. As every png chunk includes a 32bit CRC, in order to
-ensure good coverage using mutated data, it was necessary to test using the
-libpng API `png_set_crc_action(PNG_CRC_QUIET_USE, PNG_CRC_QUIET_USE)`. To
-maximise coverage in decoders which legitimately discard bad chunks, test
-images are provided in both an original and corrected form where appropriate.
+These images were selected based on the number of execution paths explored with [http://www.libpng.org/pub/png/libpng.html libpng-1.2.34]. As every png chunk includes a 32bit CRC, in order to ensure good coverage using mutated data, it was necessary to test using the libpng API `png_set_crc_action(PNG_CRC_QUIET_USE, PNG_CRC_QUIET_USE)`. To maximise coverage in decoders which legitimately discard bad chunks, test images are provided in both an original and corrected form where appropriate.
 
 Approximately 5969 unique lines of code are executed when decoding the
 testsuite using libpng-1.2.34.
@@ -32,6 +25,7 @@ testsuite using libpng-1.2.34.
 
   * Of the 5955 unique code blocks in the pngr*.c (i.e. reading routines), 2493 (~42%) are currently exercised with this testsuite.
   * Using the pngtest utility from the libpng distribution, of the 11982 total lines, 5969 are executed (~50%).
+  * Note that the majority of the unexecuted code is from pngw*.c (i.e. writing routines).
 
 [http://chart.apis.google.com/chart?chs=500x250&chd=t:296,80,339,98,545,29,108,1811,549,494,10,31,440,30,1109&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Executed%20Lines%20by%20File&ft=.png] [http://chart.apis.google.com/chart?chs=500x250&chd=t:133,101,341,46,340,7,2846,269,242,75,347,24,435,364,443&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Unexecuted%20Lines%20by%20File&ft=.png]
 
@@ -53,7 +47,7 @@ does so, please [http://code.google.com/p/imagetestsuite/issues/ submit some sam
 
 == Naming Convention ==
 
-Images are named based on the md5sum of the original source image, prefixed
+Images are named based on the md5 checksum of the original source image, prefixed
 with modifier letters, for example
 
 {{{
@@ -67,12 +61,12 @@ corrected.
 An origin containing "brokensuite" indicates the original source image is
 derived from a testcase provided by the excellent
 [http://code.google.com/p/javapng/ sixlegs java png decoding library]. These
-images do not contain any artistic content, but the project publsihes them
+images do not contain any artistic content, but the project publishes them
 under the LGPL.
 
 == Images ==
 
-=== 008b8bb75b8a487dc5aac86c9abb06fb.png ===
+=== 008b8bb75b8a487dc5aac86c9abb06fb.png FT ===
 
   * Origin: {{{brokensuite:multiple_sbit.png}}}
 
@@ -83,7 +77,7 @@ under the LGPL.
 ERROR: 008b8bb75b8a487dc5aac86c9abb06fb.png
 
 }}}
-=== 0132cfdbd8ca323574a2072e7ed5014c.png ===
+=== 0132cfdbd8ca323574a2072e7ed5014c.png FT ===
 
   * Origin: {{{brokensuite:multiple_srgb.png}}}
 
@@ -94,7 +88,7 @@ ERROR: 008b8bb75b8a487dc5aac86c9abb06fb.png
 ERROR: 0132cfdbd8ca323574a2072e7ed5014c.png
 
 }}}
-=== 0301fde58080883e938b604cab9768ea.png ===
+=== 0301fde58080883e938b604cab9768ea.png FT ===
 
   * Origin: {{{brokensuite:srgb_after_plte.png}}}
 
@@ -105,11 +99,13 @@ ERROR: 0132cfdbd8ca323574a2072e7ed5014c.png
 ERROR: 0301fde58080883e938b604cab9768ea.png
 
 }}}
-=== m1-04c2707d63235dd5ab2c66ee98a36521.png ===
+=== m1-04c2707d63235dd5ab2c66ee98a36521.png TO ===
 
   * Origin: {{{Unknown}}}
 
 ==== Notes ====
+
+  * Image is damaged beyond recognition, some french text is visible.
 
 {{{
 m1-04c2707d63235dd5ab2c66ee98a36521.png  private (invalid?) IDAT row-filter type (255) (warning)
@@ -118,15 +114,17 @@ m1-04c2707d63235dd5ab2c66ee98a36521.png  private, critical chunk IyND (warning)
 ERROR: m1-04c2707d63235dd5ab2c66ee98a36521.png
 
 }}}
-=== c-m2-0699098e769a2d80e60f33dbb3332b61.png ===
+=== c-m2-0699098e769a2d80e60f33dbb3332b61.png TO ===
 
-=== m1-0699098e769a2d80e60f33dbb3332b61.png ===
+=== m1-0699098e769a2d80e60f33dbb3332b61.png TO ===
 
-=== m2-0699098e769a2d80e60f33dbb3332b61.png ===
+=== m2-0699098e769a2d80e60f33dbb3332b61.png TO ===
 
   * Origin: {{{Unknown}}}
 
 ==== Notes ====
+
+  * Image is damaged beyond recognition
 
 {{{
 c-m2-0699098e769a2d80e60f33dbb3332b61.png  invalid pHYs unit specifier (147)
@@ -148,7 +146,7 @@ ERROR: m2-0699098e769a2d80e60f33dbb3332b61.png
 Errors were detected in 3 of the 3 files tested.
 
 }}}
-=== 073c98872b81d1004d750f18a4b5f732.png ===
+=== 073c98872b81d1004d750f18a4b5f732.png FT ===
 
   * Origin: {{{brokensuite:length_ster.png}}}
 
@@ -159,17 +157,20 @@ Errors were detected in 3 of the 3 files tested.
 ERROR: 073c98872b81d1004d750f18a4b5f732.png
 
 }}}
-=== 0839d93f8e77e21acd0ac40a80b14b7b.png ===
+=== 0839d93f8e77e21acd0ac40a80b14b7b.png U ===
 
   * Origin: {{{http://img504.imageshack.us/img504/7096/gilgagennaiohx6.png}}}
 
 ==== Notes ====
 
+  * Adobe Photoshop CS2 Windows
+  * Image is unlikely to be free to use, replacement welcome.
+
 {{{
 OK: 0839d93f8e77e21acd0ac40a80b14b7b.png (350x490, 24-bit RGB, non-interlaced, -2.5%).
 
 }}}
-=== 0b7d50ac449fd59eb3de00647636d0c9.png ===
+=== 0b7d50ac449fd59eb3de00647636d0c9.png FT ===
 
   * Origin: {{{brokensuite:length_chrm.png}}}
 
@@ -180,7 +181,7 @@ OK: 0839d93f8e77e21acd0ac40a80b14b7b.png (350x490, 24-bit RGB, non-interlaced, -
 ERROR: 0b7d50ac449fd59eb3de00647636d0c9.png
 
 }}}
-=== 0d466db9067b719df0b06ef441bf1ee7.png ===
+=== 0d466db9067b719df0b06ef441bf1ee7.png FT ===
 
   * Origin: {{{brokensuite:multiple_iccp.png}}}
 
@@ -191,13 +192,15 @@ ERROR: 0b7d50ac449fd59eb3de00647636d0c9.png
 ERROR: 0d466db9067b719df0b06ef441bf1ee7.png
 
 }}}
-=== c-m1-125cdc39e13ce7c237b7b4a9e1d8f21c.png ===
+=== c-m1-125cdc39e13ce7c237b7b4a9e1d8f21c.png TU ===
 
-=== m1-125cdc39e13ce7c237b7b4a9e1d8f21c.png ===
+=== m1-125cdc39e13ce7c237b7b4a9e1d8f21c.png TU ===
 
   * Origin: {{{http://www.alkaka.com/imeg/Internet/1.PNG}}}
 
 ==== Notes ====
+
+  * Images are damaged beyond recognition, but derived from likely non-free image. Replacement welcome.
 
 {{{
 c-m1-125cdc39e13ce7c237b7b4a9e1d8f21c.png  private (invalid?) IDAT row-filter type (141) (warning)
@@ -229,7 +232,7 @@ ERROR: m1-125cdc39e13ce7c237b7b4a9e1d8f21c.png
 Errors were detected in 2 of the 2 files tested.
 
 }}}
-=== 138331052d7c6e4acebfaa92af314e12.png ===
+=== 138331052d7c6e4acebfaa92af314e12.png FT ===
 
   * Origin: {{{brokensuite:length_hist.png}}}
 
@@ -240,7 +243,7 @@ Errors were detected in 2 of the 2 files tested.
 ERROR: 138331052d7c6e4acebfaa92af314e12.png
 
 }}}
-=== 13f665c09e4b03cdbe2fff3015ec8aa7.png ===
+=== 13f665c09e4b03cdbe2fff3015ec8aa7.png FT ===
 
   * Origin: {{{brokensuite:multiple_bkgd.png}}}
 
@@ -251,16 +254,20 @@ ERROR: 138331052d7c6e4acebfaa92af314e12.png
 ERROR: 13f665c09e4b03cdbe2fff3015ec8aa7.png
 
 }}}
-=== 18288f761922f9b9b00e927eaeb9e707.png ===
+=== 18288f761922f9b9b00e927eaeb9e707.png T ===
 
   * Origin: {{{Unknown}}}
 
 ==== Notes ====
+  
+  * Crashes pngcheck -f
+  * Damaged beyond recognition
+  
 
 {{{
-
+Segmentation Fault
 }}}
-=== 18bd8bf75e7a9b40b961dd501654ce0e.png ===
+=== 18bd8bf75e7a9b40b961dd501654ce0e.png TF ===
 
   * Origin: {{{brokensuite:hist_after_idat.png}}}
 
@@ -271,19 +278,21 @@ ERROR: 13f665c09e4b03cdbe2fff3015ec8aa7.png
 ERROR: 18bd8bf75e7a9b40b961dd501654ce0e.png
 
 }}}
-=== 18f9baf3834980f4b80a3e82ad45be48.png ===
+=== 18f9baf3834980f4b80a3e82ad45be48.png U ===
 
   * Origin: {{{http://muziektheaterapplaus.nl/algemeen/templates/oliver/images/MuziekTheaterApplaus.png}}}
 
 ==== Notes ====
 
+  * Software: ULead System
+
 {{{
 OK: 18f9baf3834980f4b80a3e82ad45be48.png (118x79, 24-bit RGB, interlaced, 62.3%).
 
 }}}
-=== c-m1-19e0d1d0dfe97dca39e9d449c6b8b3d2.png ===
+=== c-m1-19e0d1d0dfe97dca39e9d449c6b8b3d2.png TU ===
 
-=== m1-19e0d1d0dfe97dca39e9d449c6b8b3d2.png ===
+=== m1-19e0d1d0dfe97dca39e9d449c6b8b3d2.png TU ===
 
   * Origin: {{{http://www.jbiconnect.org/locale/en_AU/images/banner_right_connect.png}}}
 
@@ -305,7 +314,7 @@ ERROR: m1-19e0d1d0dfe97dca39e9d449c6b8b3d2.png
 Errors were detected in 2 of the 2 files tested.
 
 }}}
-=== 1ae14e57b7062597279134ff2eeb39c0.png ===
+=== 1ae14e57b7062597279134ff2eeb39c0.png FT ===
 
   * Origin: {{{brokensuite:multiple_trns.png}}}
 
@@ -316,11 +325,13 @@ Errors were detected in 2 of the 2 files tested.
 ERROR: 1ae14e57b7062597279134ff2eeb39c0.png
 
 }}}
-=== m1-1b5df699719c4a7cc8314ab9af139405.png ===
+=== m1-1b5df699719c4a7cc8314ab9af139405.png U ===
 
   * Origin: {{{Unknown}}}
 
 ==== Notes ====
+
+  * Image is damaged beyond recognition, an outline of a face is visible.
 
 {{{
 m1-1b5df699719c4a7cc8314ab9af139405.png  invalid IDAT row-filter type (119)
@@ -332,7 +343,7 @@ m1-1b5df699719c4a7cc8314ab9af139405.png  zlib: inflate error = -3 (data error)
 ERROR: m1-1b5df699719c4a7cc8314ab9af139405.png
 
 }}}
-=== 1b9a48cf04466108f6f2d225d100edbf.png ===
+=== 1b9a48cf04466108f6f2d225d100edbf.png TF ===
 
   * Origin: {{{brokensuite:pcal_after_idat.png}}}
 
@@ -345,7 +356,7 @@ ERROR: m1-1b5df699719c4a7cc8314ab9af139405.png
 ERROR: 1b9a48cf04466108f6f2d225d100edbf.png
 
 }}}
-=== 1bcc34d49e56a2fba38490db206328b8.png ===
+=== 1bcc34d49e56a2fba38490db206328b8.png TF ===
 
   * Origin: {{{brokensuite:multiple_scal.png}}}
 
@@ -356,49 +367,53 @@ ERROR: 1b9a48cf04466108f6f2d225d100edbf.png
 ERROR: 1bcc34d49e56a2fba38490db206328b8.png
 
 }}}
-=== 1ebd73c1d3fbc89782f29507364128fc.png ===
+=== 1ebd73c1d3fbc89782f29507364128fc.png O ===
 
   * Origin: {{{Unknown}}}
 
 ==== Notes ====
+
+  * Origin unknown, but likely non-free. Contains the text "leeroy" and photograph of a man.
 
 {{{
 OK: 1ebd73c1d3fbc89782f29507364128fc.png (110x110, 24-bit RGB, non-interlaced, -54.6%).
 
 }}}
-=== c-m1-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== c-m1-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== c-m2-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== c-m2-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== c-m3-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== c-m3-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== c-m5-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== c-m5-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== c-m6-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== c-m6-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== c-m7-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== c-m7-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== c-m8-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== c-m8-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== m1-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== m1-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== m2-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== m2-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== m3-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== m3-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== m4-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== m4-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== m5-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== m5-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== m6-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== m6-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== m7-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== m7-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
-=== m8-1f97f040d0b6b26faeb0a1a7f1499590.png ===
+=== m8-1f97f040d0b6b26faeb0a1a7f1499590.png TO ===
 
   * Origin: {{{Unknown}}}
 
 ==== Notes ====
+
+  * Damaged beyond recognition.
 
 {{{
 c-m1-1f97f040d0b6b26faeb0a1a7f1499590.png  illegal (unless recently approved) unknown, public chunk aDAT
@@ -490,13 +505,15 @@ ERROR: m8-1f97f040d0b6b26faeb0a1a7f1499590.png
 Errors were detected in 15 of the 15 files tested.
 
 }}}
-=== c-m1-1fc0c0de88608a9445d6f98a544b5abc.png ===
+=== c-m1-1fc0c0de88608a9445d6f98a544b5abc.png TU ===
 
-=== m1-1fc0c0de88608a9445d6f98a544b5abc.png ===
+=== m1-1fc0c0de88608a9445d6f98a544b5abc.png TU ===
 
   * Origin: {{{http://www.dayandnight.lv/images/techn/back_en.png}}}
 
 ==== Notes ====
+
+  * Likely non-free, but trivial contents.
 
 {{{
 c-m1-1fc0c0de88608a9445d6f98a544b5abc.png  tEXt keyword is longer than 79 characters
@@ -518,15 +535,17 @@ ERROR: m1-1fc0c0de88608a9445d6f98a544b5abc.png
 Errors were detected in 2 of the 2 files tested.
 
 }}}
-=== c-m2-272ae9468b7883e5cf61873a17271fb4.png ===
+=== c-m2-272ae9468b7883e5cf61873a17271fb4.png TO ===
 
-=== m1-272ae9468b7883e5cf61873a17271fb4.png ===
+=== m1-272ae9468b7883e5cf61873a17271fb4.png TO ===
 
-=== m2-272ae9468b7883e5cf61873a17271fb4.png ===
+=== m2-272ae9468b7883e5cf61873a17271fb4.png TO ===
 
   * Origin: {{{Unknown}}}
 
 ==== Notes ====
+
+  * Damaged beyond recognition.
 
 {{{
 c-m2-272ae9468b7883e5cf61873a17271fb4.png  private (invalid?) IDAT row-filter type (213) (warning)
@@ -534,8 +553,8 @@ c-m2-272ae9468b7883e5cf61873a17271fb4.png  invalid IDAT row-filter type (124)
 c-m2-272ae9468b7883e5cf61873a17271fb4.png  invalid zTXt compression method (120)
 c-m2-272ae9468b7883e5cf61873a17271fb4.png  illegal reserved-bit-set chunk zTot
 c-m2-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk zTXE
-c-m2-272ae9468b7883e5cf61873a17271fb4.png:  invalid chunk name "IÐND" (49 ffffffd0 4e 44)
-c-m2-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk IÐND
+c-m2-272ae9468b7883e5cf61873a17271fb4.png:  invalid chunk name "Iï¿½ND" (49 ffffffd0 4e 44)
+c-m2-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk Iï¿½ND
 ERROR: c-m2-272ae9468b7883e5cf61873a17271fb4.png
 m1-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk sRGd
 m1-272ae9468b7883e5cf61873a17271fb4.png  private (invalid?) IDAT row-filter type (208) (warning)
@@ -546,8 +565,8 @@ m1-272ae9468b7883e5cf61873a17271fb4.png  invalid IDAT row-filter type (37)
 m1-272ae9468b7883e5cf61873a17271fb4.png  invalid zTXt compression method (120)
 m1-272ae9468b7883e5cf61873a17271fb4.png  illegal reserved-bit-set chunk zTot
 m1-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk zTXE
-m1-272ae9468b7883e5cf61873a17271fb4.png:  invalid chunk name "IÐND" (49 ffffffd0 4e 44)
-m1-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk IÐND
+m1-272ae9468b7883e5cf61873a17271fb4.png:  invalid chunk name "Iï¿½ND" (49 ffffffd0 4e 44)
+m1-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk Iï¿½ND
 ERROR: m1-272ae9468b7883e5cf61873a17271fb4.png
 m2-272ae9468b7883e5cf61873a17271fb4.png  private (invalid?) IDAT row-filter type (213) (warning)
 m2-272ae9468b7883e5cf61873a17271fb4.png  invalid IDAT row-filter type (124)
@@ -559,13 +578,13 @@ m2-272ae9468b7883e5cf61873a17271fb4.png  invalid zTXt compression method (120)
 m2-272ae9468b7883e5cf61873a17271fb4.png  CRC error in chunk zTXt (computed 5fc2f3c2, expected 5f3947e2)
 m2-272ae9468b7883e5cf61873a17271fb4.png  illegal reserved-bit-set chunk zTot
 m2-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk zTXE
-m2-272ae9468b7883e5cf61873a17271fb4.png:  invalid chunk name "IÐND" (49 ffffffd0 4e 44)
-m2-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk IÐND
+m2-272ae9468b7883e5cf61873a17271fb4.png:  invalid chunk name "Iï¿½ND" (49 ffffffd0 4e 44)
+m2-272ae9468b7883e5cf61873a17271fb4.png  illegal (unless recently approved) unknown, public chunk Iï¿½ND
 ERROR: m2-272ae9468b7883e5cf61873a17271fb4.png
 Errors were detected in 3 of the 3 files tested.
 
 }}}
-=== 2a6ff5f8106894b22dad3ce99673481a.png ===
+=== 2a6ff5f8106894b22dad3ce99673481a.png U ===
 
   * Origin: {{{http://magnet.caltech.edu/images/m7.png}}}
 
@@ -576,7 +595,7 @@ Errors were detected in 3 of the 3 files tested.
 ERROR: 2a6ff5f8106894b22dad3ce99673481a.png
 
 }}}
-=== 2d641a11233385bb37a524ff010a8531.png ===
+=== 2d641a11233385bb37a524ff010a8531.png U ===
 
   * Origin: {{{http://www.coherentpdf.com/logo-cloud.png}}}
 
@@ -586,13 +605,13 @@ ERROR: 2a6ff5f8106894b22dad3ce99673481a.png
 OK: 2d641a11233385bb37a524ff010a8531.png (162x159, 32-bit RGB+alpha, non-interlaced, 75.2%).
 
 }}}
-=== c-m1-2dc3bdd9274b121b851fa536b0e35b6a.png ===
+=== c-m1-2dc3bdd9274b121b851fa536b0e35b6a.png TO ===
 
-=== c-m2-2dc3bdd9274b121b851fa536b0e35b6a.png ===
+=== c-m2-2dc3bdd9274b121b851fa536b0e35b6a.png TO ===
 
-=== m1-2dc3bdd9274b121b851fa536b0e35b6a.png ===
+=== m1-2dc3bdd9274b121b851fa536b0e35b6a.png TO ===
 
-=== m2-2dc3bdd9274b121b851fa536b0e35b6a.png ===
+=== m2-2dc3bdd9274b121b851fa536b0e35b6a.png TO ===
 
   * Origin: {{{Unknown}}}
 
@@ -627,7 +646,7 @@ ERROR: m2-2dc3bdd9274b121b851fa536b0e35b6a.png
 Errors were detected in 4 of the 4 files tested.
 
 }}}
-=== 31e3bc3eb811cff582b5feee2494fed8.png ===
+=== 31e3bc3eb811cff582b5feee2494fed8.png TF ===
 
   * Origin: {{{brokensuite:sbit_after_idat.png}}}
 
@@ -638,15 +657,15 @@ Errors were detected in 4 of the 4 files tested.
 ERROR: 31e3bc3eb811cff582b5feee2494fed8.png
 
 }}}
-=== 3625f98e00148cdc136c53bdcd2d2e1e.png ===
+=== 3625f98e00148cdc136c53bdcd2d2e1e.png TO ===
 
-=== c-3625f98e00148cdc136c53bdcd2d2e1e.png ===
+=== c-3625f98e00148cdc136c53bdcd2d2e1e.png TO ===
 
-=== c-m1-3625f98e00148cdc136c53bdcd2d2e1e.png ===
+=== c-m1-3625f98e00148cdc136c53bdcd2d2e1e.png TO ===
 
-=== m1-3625f98e00148cdc136c53bdcd2d2e1e.png ===
+=== m1-3625f98e00148cdc136c53bdcd2d2e1e.png TO ===
 
-=== m2-3625f98e00148cdc136c53bdcd2d2e1e.png ===
+=== m2-3625f98e00148cdc136c53bdcd2d2e1e.png TO ===
 
   * Origin: {{{Unknown}}}
 
@@ -685,7 +704,7 @@ ERROR: m2-3625f98e00148cdc136c53bdcd2d2e1e.png
 Errors were detected in 5 of the 5 files tested.
 
 }}}
-=== 429104334d1fb6a58e17307883c17608.png ===
+=== 429104334d1fb6a58e17307883c17608.png TF ===
 
   * Origin: {{{brokensuite:sbit_after_plte.png}}}
 
@@ -696,7 +715,7 @@ Errors were detected in 5 of the 5 files tested.
 ERROR: 429104334d1fb6a58e17307883c17608.png
 
 }}}
-=== 42ec8668adb5dbc6581393f463976510.png ===
+=== 42ec8668adb5dbc6581393f463976510.png TF ===
 
   * Origin: {{{brokensuite:trns_after_idat.png}}}
 
@@ -707,7 +726,7 @@ ERROR: 429104334d1fb6a58e17307883c17608.png
 ERROR: 42ec8668adb5dbc6581393f463976510.png
 
 }}}
-=== 4389427591c18bf36e748172640862c3.png ===
+=== 4389427591c18bf36e748172640862c3.png TF ===
 
   * Origin: {{{brokensuite:ster_mode.png}}}
 
@@ -718,7 +737,7 @@ ERROR: 42ec8668adb5dbc6581393f463976510.png
 ERROR: 4389427591c18bf36e748172640862c3.png
 
 }}}
-=== 463d3570f92a6b6ecba0cc4fd9a7a384.png ===
+=== 463d3570f92a6b6ecba0cc4fd9a7a384.png TF ===
 
   * Origin: {{{brokensuite:multiple_plte.png}}}
 
@@ -729,9 +748,9 @@ ERROR: 4389427591c18bf36e748172640862c3.png
 ERROR: 463d3570f92a6b6ecba0cc4fd9a7a384.png
 
 }}}
-=== c-m1-49e39033e275de9786d8c41f834c710b.png ===
+=== c-m1-49e39033e275de9786d8c41f834c710b.png TO ===
 
-=== m1-49e39033e275de9786d8c41f834c710b.png ===
+=== m1-49e39033e275de9786d8c41f834c710b.png TO ===
 
   * Origin: {{{Unknown}}}
 
@@ -750,7 +769,7 @@ ERROR: m1-49e39033e275de9786d8c41f834c710b.png
 Errors were detected in 2 of the 2 files tested.
 
 }}}
-=== 4aae896ba900c48c63cffc0cc9f8c4dc.png ===
+=== 4aae896ba900c48c63cffc0cc9f8c4dc.png TF ===
 
   * Origin: {{{http://www.schaik.com/pngsuite/x00n0g01.png}}}
   * Origin: {{{brokensuite:x00n0g01.png}}}
@@ -770,6 +789,8 @@ ERROR: 4aae896ba900c48c63cffc0cc9f8c4dc.png
   * Origin: {{{http://farm3.static.flickr.com/2401/2263329466_036c167f2e_o.png}}}
 
 ==== Notes ====
+
+  * A quick search doesn't reveal the flickr user who created this, as the license is usually published will update this if found.
 
 {{{
 c-m1-4bdd87fd0324f0a3d84d6905d17e1731.png  invalid tIME year (0)
@@ -1010,9 +1031,9 @@ ERROR: c-m3-593d4b1a0b5d13b539c6c098dc5797ca.png
 m1-593d4b1a0b5d13b539c6c098dc5797ca.png  first chunk must be IHDR
 m1-593d4b1a0b5d13b539c6c098dc5797ca.png  illegal (unless recently approved) unknown, public chunk vHDR
 m1-593d4b1a0b5d13b539c6c098dc5797ca.png  first chunk must be IHDR
-m1-593d4b1a0b5d13b539c6c098dc5797ca.png:  invalid chunk name "IDA¯" (49 44 41 ffffffaf)
+m1-593d4b1a0b5d13b539c6c098dc5797ca.png:  invalid chunk name "IDAï¿½" (49 44 41 ffffffaf)
 m1-593d4b1a0b5d13b539c6c098dc5797ca.png  first chunk must be IHDR
-m1-593d4b1a0b5d13b539c6c098dc5797ca.png  illegal critical, safe-to-copy chunk IDA¯
+m1-593d4b1a0b5d13b539c6c098dc5797ca.png  illegal critical, safe-to-copy chunk IDAï¿½
 m1-593d4b1a0b5d13b539c6c098dc5797ca.png  first chunk must be IHDR
 m1-593d4b1a0b5d13b539c6c098dc5797ca.png  no IDAT chunks
 ERROR: m1-593d4b1a0b5d13b539c6c098dc5797ca.png
@@ -1527,12 +1548,12 @@ Errors were detected in 2 of the 2 files tested.
 {{{
 817f96555e2d683e7b12f778c4e38022.png  CRC error in chunk IHDR (computed 06d4b8a8, expected 498b65ef)
 817f96555e2d683e7b12f778c4e38022.png  invalid gAMA length
-817f96555e2d683e7b12f778c4e38022.png:  invalid chunk name "Úbüÿ" (ffffffda 62 fffffffc ffffffff)
-817f96555e2d683e7b12f778c4e38022.png  EOF while reading Úbüÿ data
+817f96555e2d683e7b12f778c4e38022.png:  invalid chunk name "ï¿½bï¿½ï¿½" (ffffffda 62 fffffffc ffffffff)
+817f96555e2d683e7b12f778c4e38022.png  EOF while reading ï¿½bï¿½ï¿½ data
 ERROR: 817f96555e2d683e7b12f778c4e38022.png
 c-817f96555e2d683e7b12f778c4e38022.png  invalid gAMA length
-c-817f96555e2d683e7b12f778c4e38022.png:  invalid chunk name "Úbüÿ" (ffffffda 62 fffffffc ffffffff)
-c-817f96555e2d683e7b12f778c4e38022.png  EOF while reading Úbüÿ data
+c-817f96555e2d683e7b12f778c4e38022.png:  invalid chunk name "ï¿½bï¿½ï¿½" (ffffffda 62 fffffffc ffffffff)
+c-817f96555e2d683e7b12f778c4e38022.png  EOF while reading ï¿½bï¿½ï¿½ data
 ERROR: c-817f96555e2d683e7b12f778c4e38022.png
 Errors were detected in 2 of the 2 files tested.
 
@@ -1797,8 +1818,8 @@ c-m1-9a3e0c7b687b526987e2270541002d47.png  private (invalid?) IDAT row-filter ty
 c-m1-9a3e0c7b687b526987e2270541002d47.png  invalid IDAT row-filter type (22)
 c-m1-9a3e0c7b687b526987e2270541002d47.png  illegal reserved-bit-set chunk zTlt
 c-m1-9a3e0c7b687b526987e2270541002d47.png  invalid zTXt compression method (58)
-c-m1-9a3e0c7b687b526987e2270541002d47.png:  invalid chunk name "peÁ" (70 65 ffffffc1 00)
-c-m1-9a3e0c7b687b526987e2270541002d47.png  EOF while reading peÁ data
+c-m1-9a3e0c7b687b526987e2270541002d47.png:  invalid chunk name "peï¿½" (70 65 ffffffc1 00)
+c-m1-9a3e0c7b687b526987e2270541002d47.png  EOF while reading peï¿½ data
 ERROR: c-m1-9a3e0c7b687b526987e2270541002d47.png
 c-m2-9a3e0c7b687b526987e2270541002d47.png  private (invalid?) IDAT row-filter type (190) (warning)
 c-m2-9a3e0c7b687b526987e2270541002d47.png  invalid IDAT row-filter type (40)
@@ -1813,8 +1834,8 @@ m1-9a3e0c7b687b526987e2270541002d47.png  CRC error in chunk IDAT (computed 859e8
 m1-9a3e0c7b687b526987e2270541002d47.png  CRC error in chunk zTXt (computed 7ae72cac, expected 98310798)
 m1-9a3e0c7b687b526987e2270541002d47.png  illegal reserved-bit-set chunk zTlt
 m1-9a3e0c7b687b526987e2270541002d47.png  invalid zTXt compression method (58)
-m1-9a3e0c7b687b526987e2270541002d47.png:  invalid chunk name "peÁ" (70 65 ffffffc1 00)
-m1-9a3e0c7b687b526987e2270541002d47.png  EOF while reading peÁ data
+m1-9a3e0c7b687b526987e2270541002d47.png:  invalid chunk name "peï¿½" (70 65 ffffffc1 00)
+m1-9a3e0c7b687b526987e2270541002d47.png  EOF while reading peï¿½ data
 ERROR: m1-9a3e0c7b687b526987e2270541002d47.png
 m2-9a3e0c7b687b526987e2270541002d47.png  CRC error in chunk IHDR (computed 6860fccf, expected 1f67cc59)
 m2-9a3e0c7b687b526987e2270541002d47.png  private (invalid?) IDAT row-filter type (190) (warning)
@@ -1974,8 +1995,8 @@ c-m3-a46ce91d8975a017917156b8824f936e.png  IDAT must follow PLTE in palette imag
 c-m3-a46ce91d8975a017917156b8824f936e.png  zlib: inflate error = -3 (data error)
 ERROR: c-m3-a46ce91d8975a017917156b8824f936e.png
 c-m4-a46ce91d8975a017917156b8824f936e.png  invalid number of PLTE entries (293)
-c-m4-a46ce91d8975a017917156b8824f936e.png:  invalid chunk name "mÀ<%" (6d ffffffc0 3c 25)
-c-m4-a46ce91d8975a017917156b8824f936e.png  EOF while reading mÀ<% data
+c-m4-a46ce91d8975a017917156b8824f936e.png:  invalid chunk name "mï¿½<%" (6d ffffffc0 3c 25)
+c-m4-a46ce91d8975a017917156b8824f936e.png  EOF while reading mï¿½<% data
 ERROR: c-m4-a46ce91d8975a017917156b8824f936e.png
 c-m5-a46ce91d8975a017917156b8824f936e.png  CRC error in chunk cHRM (computed 925fc546, expected 925f0a46)
 c-m5-a46ce91d8975a017917156b8824f936e.png  invalid number of PLTE entries (256) for 1-bit image
@@ -2010,8 +2031,8 @@ m3-a46ce91d8975a017917156b8824f936e.png  zlib: inflate error = -3 (data error)
 ERROR: m3-a46ce91d8975a017917156b8824f936e.png
 m4-a46ce91d8975a017917156b8824f936e.png  invalid number of PLTE entries (293)
 m4-a46ce91d8975a017917156b8824f936e.png  CRC error in chunk PLTE (computed 702a2aba, expected 9c9d48a6)
-m4-a46ce91d8975a017917156b8824f936e.png:  invalid chunk name "mÀ<%" (6d ffffffc0 3c 25)
-m4-a46ce91d8975a017917156b8824f936e.png  EOF while reading mÀ<% data
+m4-a46ce91d8975a017917156b8824f936e.png:  invalid chunk name "mï¿½<%" (6d ffffffc0 3c 25)
+m4-a46ce91d8975a017917156b8824f936e.png  EOF while reading mï¿½<% data
 ERROR: m4-a46ce91d8975a017917156b8824f936e.png
 m5-a46ce91d8975a017917156b8824f936e.png  CRC error in chunk IHDR (computed 74ad9407, expected 79bdf676)
 m5-a46ce91d8975a017917156b8824f936e.png  CRC error in chunk cHRM (computed 925fc546, expected 925f0a46)
@@ -2180,8 +2201,8 @@ OK: b59d7a023a8dcd112da2eb859004199a.png (470x551, 32-bit RGB+alpha, non-interla
 
 {{{
 c-m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png  illegal (unless recently approved) unknown, public chunk aDAT
-c-m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png:  invalid chunk name "IºD" (49 1e ffffffba 44)
-c-m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png  EOF while reading IºD data
+c-m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png:  invalid chunk name "Iï¿½D" (49 1e ffffffba 44)
+c-m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png  EOF while reading Iï¿½D data
 ERROR: c-m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png
 m1-b68163a6a8e2ccf3c8ad2c70a26c1150.png  illegal (unless recently approved) unknown, public chunk aDAT
 m1-b68163a6a8e2ccf3c8ad2c70a26c1150.png:  invalid chunk name "@END" (40 45 4e 44)
@@ -2196,14 +2217,14 @@ m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png  illegal (unless recently approved) unkn
 m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png  first chunk must be IHDR
 m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png  illegal (unless recently approved) unknown, public chunk aDAT
 m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png  first chunk must be IHDR
-m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png:  invalid chunk name "IEºD" (49 45 ffffffba 44)
+m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png:  invalid chunk name "IEï¿½D" (49 45 ffffffba 44)
 m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png  first chunk must be IHDR
-m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png  EOF while reading IEºD data
+m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png  EOF while reading IEï¿½D data
 ERROR: m2-b68163a6a8e2ccf3c8ad2c70a26c1150.png
 m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png  CRC error in chunk vpAg (computed f790b292, expected 09c59193)
 m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png  illegal (unless recently approved) unknown, public chunk aDAT
-m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png:  invalid chunk name "IºD" (49 1e ffffffba 44)
-m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png  EOF while reading IºD data
+m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png:  invalid chunk name "Iï¿½D" (49 1e ffffffba 44)
+m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png  EOF while reading Iï¿½D data
 ERROR: m3-b68163a6a8e2ccf3c8ad2c70a26c1150.png
 Errors were detected in 4 of the 4 files tested.
 
@@ -2422,9 +2443,9 @@ m1-cb265e4ae8967567fca5b0ecd58b90cb.png  first chunk must be IHDR
 m1-cb265e4ae8967567fca5b0ecd58b90cb.png  illegal (unless recently approved) unknown, public chunk bKGj
 m1-cb265e4ae8967567fca5b0ecd58b90cb.png  first chunk must be IHDR
 m1-cb265e4ae8967567fca5b0ecd58b90cb.png  invalid tIME length
-m1-cb265e4ae8967567fca5b0ecd58b90cb.png:  invalid chunk name "ÿí;" (ffffffff 7f ffffffed 3b)
+m1-cb265e4ae8967567fca5b0ecd58b90cb.png:  invalid chunk name "ï¿½ï¿½;" (ffffffff 7f ffffffed 3b)
 m1-cb265e4ae8967567fca5b0ecd58b90cb.png  first chunk must be IHDR
-m1-cb265e4ae8967567fca5b0ecd58b90cb.png  EOF while reading ÿí; data
+m1-cb265e4ae8967567fca5b0ecd58b90cb.png  EOF while reading ï¿½ï¿½; data
 ERROR: m1-cb265e4ae8967567fca5b0ecd58b90cb.png
 
 }}}
@@ -2542,7 +2563,7 @@ m2-d87a07bdc461bf81e43447ca0620d71d.png  illegal (unless recently approved) unkn
 m2-d87a07bdc461bf81e43447ca0620d71d.png  first chunk must be IHDR
 m2-d87a07bdc461bf81e43447ca0620d71d.png  illegal reserved-bit-set chunk iCbP
 m2-d87a07bdc461bf81e43447ca0620d71d.png  first chunk must be IHDR
-m2-d87a07bdc461bf81e43447ca0620d71d.png:  invalid chunk name "vpAÛ" (76 70 41 ffffffdb)
+m2-d87a07bdc461bf81e43447ca0620d71d.png:  invalid chunk name "vpAï¿½" (76 70 41 ffffffdb)
 m2-d87a07bdc461bf81e43447ca0620d71d.png  first chunk must be IHDR
 m2-d87a07bdc461bf81e43447ca0620d71d.png  invalid chunk length (too large)
 ERROR: m2-d87a07bdc461bf81e43447ca0620d71d.png
