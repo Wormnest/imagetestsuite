@@ -12,7 +12,7 @@ data, esoteric characteristics, edge cases, and pathological input. If you're in
 
 Your decoder or application should gracefully handle any errors while
 attempting to render these images. To read more about how these testsuites are
-generated and their intended use, see AboutTestsuite.
+generated and their intended use, see AboutTestSuite.
 
 = Specification =
 
