@@ -18,26 +18,18 @@ generated and their intended use, see AboutTestSuite.
 
 These images were selected based on the number of execution paths explored with [http://www.libpng.org/pub/png/libpng.html libpng-1.2.34]. As every png chunk includes a 32bit CRC, in order to ensure good coverage using mutated data, it was necessary to test using the libpng API `png_set_crc_action(PNG_CRC_QUIET_USE, PNG_CRC_QUIET_USE)`. To maximise coverage in decoders which legitimately discard bad chunks, test images are provided in both an original and corrected form where appropriate.
 
-Approximately 5969 unique lines of code are executed when decoding the
+Approximately 4295 unique lines of code are executed when decoding the
 testsuite using libpng-1.2.34.
 
 == Coverage ==
 
-  * Of the 5955 unique code blocks in the `pngr*.c` (i.e. reading routines), 2493 (~42%) are currently exercised with this testsuite.
-  * Using the pngtest utility from the libpng distribution, of the 11982 total lines, 5969 are executed (~50%).
-  * Note that the majority of the unexecuted code is from `pngw*.c` (i.e. writing routines).
+  * Using the pngtest utility from the libpng distribution, of the 9139 total lines, 4295 are executed (~50%).
 
-[http://chart.apis.google.com/chart?chs=500x250&chd=t:296,80,339,98,545,29,108,1811,549,494,10,31,440,30,1109&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Executed%20Lines%20by%20File&ft=.png]
-
-[http://chart.apis.google.com/chart?chs=500x250&chd=t:133,101,341,46,340,7,2846,269,242,75,347,24,435,364,443&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|pngwio.c|pngwrite.c|pngwtran.c|pngwutil.c&cht=p&chtt=Distribution%20of%20Unexecuted%20Lines%20by%20File&ft=.png]
-
-[http://chart.apis.google.com/chart?chds=0,3000&chs=500x250&cht=bvs&chco=4D89F9,C6D9FD&chd=t:304,81,340,99,551,29,104,1809,545,498,10,31,441,29,1131,0|133,115,341,47,337,8,2823,296,260,75,352,26,456,371,450,9&cht=bvs&chtt=Executed%20vs%20Unexecuted%20Lines%20Per%20File&ft=.png]
+[http://chart.apis.google.com/chart?chs=500x250&chd=t:287,81,330,99,559,28,104,1882,596,319,10,0&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|sysmacros.h&cht=p&chtt=Distribution%20of%20Executed%20Lines%20by%20File]
+[http://chart.apis.google.com/chart?chs=500x250&chd=t:150,115,345,47,337,7,2823,325,232,102,352,9&chl=png.c|pngerror.c|pngget.c|pngmem.c|pngread.c|pngrio.c|pngrtran.c|pngrutil.c|pngset.c|pngtest.c|pngtrans.c|sysmacros.h&cht=p&chtt=Distribution%20of%20Unexecuted%20Lines%20by%20File]
+[http://chart.apis.google.com/chart?chds=0,3000&chs=500x250&cht=bvs&chco=4D89F9,C6D9FD&chd=t:287,81,330,99,559,28,104,1882,596,319,10,0|150,115,345,47,337,7,2823,325,232,102,352,9&cht=bvs&chtt=Executed%20vs%20Unexecuted%20Lines%20Per%20File]
 
 === Coverage Gaps ==
-
-There are some notable omissions from the testsuite, I have no live example
-of a application generating an iTXt chunk. If you have an application that
-does so, please [http://code.google.com/p/imagetestsuite/issues/ submit some samples].
 
 The majority of the unexecuted code is from the writing routines, whice are largely unused during decoder testing. A large portion of the code also handles runtime allocation failure.
 
