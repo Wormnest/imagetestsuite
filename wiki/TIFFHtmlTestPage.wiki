@@ -1,5 +1,4 @@
 #summary View the TIFF TestSuite in one HTML Page
-#labels Featured
 
 = Introduction =
 
