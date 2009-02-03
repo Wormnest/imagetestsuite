@@ -5,6 +5,8 @@
 
 This page will load the entire testsuite using your browser.
 
+Please note, due to their large size, and the fact that TIFF images are rarely rendered inline by web browsers, the TIFF images have their own page, see TIFFHtmlTestPage.
+
 = Images =
 
 [http://imagetestsuite.googlecode.com/svn/trunk/gif/e6aa0c45a13dd7fc94f7b5451bd89bf4.gif]
