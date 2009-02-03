@@ -5,7 +5,7 @@
 
 This page will load the entire testsuite using your browser.
 
-Please note, due to their large size, and the fact that TIFF images are rarely rendered inline by web browsers, the TIFF images have their own page, see TIFFHtmlTestPage.
+Please note, due to their large size, and the fact that TIFF images are rarely rendered inline by web browsers, the TIFF images are not included here.
 
 = Images =
 
