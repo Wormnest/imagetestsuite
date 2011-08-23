@@ -86,6 +86,10 @@ But the LZW Minimum Code Size field has to be 2 <= LZW Minimum Code Size <= 8.
 
 ===Description===
 
+The first error in these files (from offset 0x315 on) is the same as in fc3e2b992c559055267e26dc23e484c0.gif. Look there for reference.
+
+If you decide to ignore this error, you find another one in each of these two files:
+
 Offset 0x87A contains the Block Terminator for Image Data. Now let's look at the byte at offset 0x87B:
 
 {{{
@@ -325,8 +329,6 @@ Logical Screen Descriptor follows:
 After this the file ends prematurely.
 
 ==e6aa0c45a13dd7fc94f7b5451bd89bf4.gif==
-==f88b6907ee086c4c8ac4b8c395748c49.gif==
-==fc3e2b992c559055267e26dc23e484c0.gif==
 
 || Format || GIF 89a ||
 
@@ -407,3 +409,96 @@ If we changed the 0x2B at offset 0x420 to 0x2A the file would perhaps become cor
 
 So we have the same situation as in bc7af0616c4ae99144c8600e7b39beea.gif (see the more detailed explanation there): a Graphic Control Extension block followed by an
 Application Extension block - this is not allowed.
+
+==f88b6907ee086c4c8ac4b8c395748c49.gif==
+
+|| Format || GIF 89a ||
+
+===Description===
+
+At offset 0xB4A we read a code word of 7 bits:
+
+{{{
+0xB4A: 40 50
+       01000000 01010000
+       0          010000
+}}}
+
+So the code word is 0x20. This code word is invalid.
+
+Why?
+
+To understands look at the Image Descriptor (note that the data beginning at offset 0xB3E also looks like an Image Descriptor - but isn't) before at offset 0xB26:
+
+{{{
+0xB26: 2C
+       00 00
+       00 00
+       01 00
+       01 00
+       82 (<Packed Fields>)
+}}}
+
+The flags <Packed Fields> tell that we have a local color table with 2^(2+1) = 8 entries. 
+
+After the Local Color Table (offset 0xB48) we have the LZW Minimum Code Size field. It carries the value 0x06. So the Clear code is 2^6 = 64 and the End of Information code = <Clear code>+1 = 65.
+
+So the 0x20 code above is not a compression code, but an index in the currently active color table (the Local Color Table). But the Local Color Table has only 8 entries. So the code word 0x20 above is invalid.
+
+To find another error in this file, look at offset 0x7150, where you find an Image Descriptor
+
+{{{
+0x7150: 2C (Image Separator)
+        0B 00 (Image Left Position)
+        04 00 (Image Top Position)
+        38 00 (Image Width)
+        3D 00 (Image Height)
+        00 (<Packed Fields> - no Local Color Table)
+}}}
+
+So this image is supposed to consist of Image Width * Image Height = 56 * 61 = 3416 pixels.
+
+But the LZW-decoded Image Data of the Table Based Image Data block that follows contains 3417 indices into the active color table.
+
+If we ignore this error, another one follows: at offset 0x9184, we have another Image Descriptor:
+
+{{{
+0x9184: 2C (Image Separator)
+        03 00 (Image Left Position)
+        03 00 (Image Top Position)
+        46 00 (Image Width)
+        41 00 (Image Height)
+        00 (<Packed Fields> - no Local Color Table)
+}}}
+
+So this image should consist of Image Width * Image Height = 4550 pixels.
+
+This time the LZW-decoded Image Data of the Table Based Image Data block that follows contains only 4537 indices into the active color table.
+
+==fc3e2b992c559055267e26dc23e484c0.gif==
+
+|| Format || GIF 89a ||
+
+===Description===
+
+If you look at offset 0x315, you see an Image Descriptor
+
+{{{
+0x315: 2C (Image Separator)
+       00 00 (Image Left Position)
+       00 00 (Image Top Position)
+       64 00 (Image Width)
+       2D 00 (Image Height)
+	   07 (<Packed Fields> - no Local Color Table)
+}}}
+
+So the image consists of Image Width*Image Height = 2500 pixels.
+
+But the Image Data in the Table Based Image Data that follows directly after (since we have no Local Color Table)
+
+{{{
+0x31F: 08 (LZW Minimum Code Size)
+       ... (Image Data)
+}}}
+
+only contains 2499 indices into the active color table.
