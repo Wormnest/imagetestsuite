@@ -1,0 +1,1 @@
+A collection of test images used to validate image decoders.
